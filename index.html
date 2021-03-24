@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
 
@@ -11,29 +12,67 @@
 
     <div class="oldal">
         <div class="keret">
-            <div class="bal">
-                <a href=""><img id="b" src="./kepek/arrow.svg" alt=""></a>
-            </div>
-            <div class="kozep">
-            <img id="oak" src="./kepek/nyolcadik.jpg" alt="lepkék"> 
-            </div>
-            <div class="jobb">
-            <a href=""><img id="j" src="./kepek/arrow.svg" alt=""></a>
-            </div>
+            <div class="b"><img id="left" src="./kepek/arrow.svg" alt="előző"></div>
+            <div class="kozep"><img id="picture" src="./kepek/nyolcadik.jpg" alt="lepkék"></div>
+            <div class="j"><img id="right" src="./kepek/arrow.svg" alt="következő"></div>
             
         </div>
 
         <div class="lab">
-            <div class="elso doboz"><a href=""><img id="e" src="./kepek/elso.jpg" alt=""></a></div>
-            <div class="masodik doboz"><a href=""><img id="e" src="./kepek/masodik.jpg" alt=""></a></div>
-            <div class="harmadik doboz"><a href=""><img id="e" src="./kepek/harmadik.jpg" alt=""></a></div>
-            <div class="negyedik doboz"><a href=""><img id="e" src="./kepek/negyedik.jpg" alt=""></a></div>
-            <div class="otodik doboz"><a href=""><img id="e" src="./kepek/otodik.jpg" alt=""></a></div>
-            <div class="hatodik doboz"><a href=""><img id="e" src="./kepek/hatodik.jpg" alt=""></a></div>
-            <div class="hetedik doboz"><a href=""><img id="e" src="./kepek/hetedik.jpg" alt=""></a></div>
-            <div class="nyolcadik doboz"><a href=""><img id="e" src="./kepek/nyolcadik.jpg" alt=""></a></div>
+            <div class="picture doboz"><img id="e" src="./kepek/elso.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e" src="./kepek/masodik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e" src="./kepek/harmadik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e"  src="./kepek/negyedik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e"  src="./kepek/otodik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e"  src="./kepek/hatodik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e"  src="./kepek/hetedik.jpg" alt=""></div>
+            <div class="picture doboz"><img id="e"  src="./kepek/nyolcadik.jpg" alt=""></div>
         </div>
     </div>
 
-   </body>
+    <script type="text/javascript">  
+        (function () {  
+          var i = 0,  
+              pics = [  
+                "./kepek/elso.jpg",  
+                "./kepek/masodik.jpg",
+                "./kepek/harmadik.jpg",
+                "./kepek/negyedik.jpg",
+                "./kepek/otodik.jpg",
+                "./kepek/hatodik.jpg",
+                "./kepek/hetedik.jpg",
+                "./kepek/nyolcadik.jpg"
+                  
+              ],  
+              max = pics.length;  
+      
+          function decrease() {  
+            if (i <= 0) {  
+              i = max - 1;  
+              load();  
+            } else {  
+              i--;  
+              load();  
+            }  
+          }  
+      
+          function increase() {  
+            if (i >= max - 1) {  
+              i = 0;  
+              load();  
+            } else {  
+              i++;  
+              load();  
+            }  
+          }  
+      
+          function load() {  
+            document.getElementById("picture").src = pics[i];  
+          }  
+      
+          document.getElementById('left').onclick = decrease;  
+          document.getElementById('right').onclick = increase;  
+        }());  
+      </script>  
+</body>
 </html>
